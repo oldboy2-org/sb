@@ -1,8 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
-    "http://mybatis.org/dtd/mybatis-3-config.dtd">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-   
+
+	<settings>
+		<!-- 获取主键自增的这个值 -->
+		<setting name="useGeneratedKeys" value="true"/>
+		
+		<!-- 开启驼峰命名的转化 -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+
 </configuration>
+

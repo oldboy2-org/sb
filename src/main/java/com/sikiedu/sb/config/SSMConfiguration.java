@@ -29,7 +29,7 @@ public class SSMConfiguration {
 		ComboPooledDataSource dataSource = new ComboPooledDataSource();
 		
 		//driver
-		dataSource.setDriverClass("com.mysql.jdbc.Driver");
+		dataSource.setDriverClass("com.mysql.cj.jdbc.Driver");
 		//url
 		dataSource.setJdbcUrl("jdbc:mysql://::1:3306/ssm?serverTimezone=UTC&characterEncoding=utf-8&useSSL=true");
 		//username
@@ -60,5 +60,4 @@ public class SSMConfiguration {
 	}
 	
 	
-
 }

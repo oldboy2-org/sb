@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace:Mapper对应的DAO -->
+<mapper namespace="com.sikiedu.sb.dao.UserDao">
+
+    <!-- select：查询子句，id：对应的方法名称，resultType:：的类型 -->
+    <select id="searchAllUsers" resultType="com.sikiedu.sb.entity.User">
+        select * from user
+    </select>
+    
+    <select id="searchUserById" resultType="com.sikiedu.sb.entity.User">
+        select * from user where id = #{id}
+    </select>
+    
+    <!-- userGeneratedKeys:如果执行成功，则返回主键的值，parameterType:入参的类 -->
+    <insert id="addUser1" useGeneratedKeys="true">
+        insert into user(username,password) values(#{username},#{password}) 
+    </insert>
+    
+    <insert id="addUser2" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="com.sikiedu.sb.entity.User">
+        insert into user values(#{id},#{username},#{password})
+    </insert>
+    
+    <update id="updateUser" parameterType="com.sikiedu.sb.entity.User">
+        update user set username=#{username},password=#{password} where id=#{id}
+    </update>
+    
+    <delete id="deleteUserById1">
+        delete from user where id=#{id}
+    </delete>
+    
+    <!-- Lain为别名 -->
+    <delete id="deleteUserById2">
+        delete from user where id=#{Lain}
+    </delete>
+</mapper>
